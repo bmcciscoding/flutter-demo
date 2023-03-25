@@ -1,5 +1,8 @@
+import 'package:flutter_demo/biz/home/redux/state.dart';
+
 class AppState {
-  final biz = BizAppState();
+  BizAppState biz = BizAppState();
+  HomeState home = HomeState();
 }
 
 class BizAppState {

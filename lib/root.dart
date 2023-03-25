@@ -1,19 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/architecture/redux/state.dart';
+import 'package:flutter_demo/biz/home/page/page.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
-
-final store = Store<AppState>(
-  combineReducers([]),
-  initialState: AppState(),
-  middleware: [],
-);
-void main() {
-  runApp(FlutterReduxApp(
-    title: 'Flutter Redux Demo',
-    store: store,
-  ));
-}
 
 class FlutterReduxApp extends StatelessWidget {
   final Store<AppState> store;
@@ -32,16 +22,8 @@ class FlutterReduxApp extends StatelessWidget {
       child: MaterialApp(
         theme: ThemeData.dark(),
         title: title,
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text(title),
-          ),
-          body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [Text('Home')],
-            ),
-          ),
+        home: const Scaffold(
+          body: HomePage(),
         ),
       ),
     );
