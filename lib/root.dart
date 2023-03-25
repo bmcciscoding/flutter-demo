@@ -20,6 +20,7 @@ class FlutterReduxApp extends StatelessWidget {
     return StoreProvider<AppState>(
       store: store,
       child: MaterialApp(
+        routes: routes,
         theme: ThemeData.dark(),
         title: title,
         home: const Scaffold(
@@ -29,3 +30,7 @@ class FlutterReduxApp extends StatelessWidget {
     );
   }
 }
+
+final routes = <String, Widget Function(BuildContext ctx)>{
+  HomePage.routeName: (ctx) => const HomePage()
+};
